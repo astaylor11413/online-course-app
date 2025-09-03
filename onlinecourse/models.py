@@ -110,9 +110,6 @@ class Choice(models.Model):
     is_correct = models.BooleanField(default=False)
 
 #Submission Model
-# One enrollment could have multiple submission (many-to-one)
-# One submission could have multiple choices and one choice could belong to multiple submissions
-# (many-to-many)
 class Submission(models.Model):
     enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
     choices = models.ManyToManyField(Choice)
